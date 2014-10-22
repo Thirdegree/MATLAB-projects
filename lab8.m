@@ -110,7 +110,7 @@ function [] = lab8()
 		scared();
 		retreat();
 		switch key %Frankly, this entire switch could be replaced with seek().
-        case 'uparrow' %Nothing else even *can* be used exect in absurd circumstances. 
+        		case 'uparrow' %Nothing else even *can* be used exect in absurd circumstances. 
 				forward(); %I never fixed it because I didn't need to to win.
 			case 'downarrow'
 				backward();
