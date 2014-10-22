@@ -109,9 +109,9 @@ function [] = lab8()
 	while (1)
 		scared();
 		retreat();
-		switch key
-			case 'uparrow'
-				forward();
+		switch key %Frankly, this entire switch could be replaced with seek().
+        case 'uparrow' %Nothing else even *can* be used exect in absurd circumstances. 
+				forward(); %I never fixed it because I didn't need to to win.
 			case 'downarrow'
 				backward();
 			case 'leftarrow'
