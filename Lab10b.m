@@ -24,13 +24,13 @@ function [] = Lab10b()
     % Moves forward with a slight bias towards the right side. 
     function [] = forwardRight()
     	left.Power = -100;
-    	right.Power = -90;
+    	right.Power = -80;
     	both.SendToNXT();
     end
 
     % Moves forward with a slight bias towards the left side.
     function [] = forwardLeft()
-    	left.Power = -90;
+    	left.Power = -80;
     	right.Power = -100;
     	both.SendToNXT();
     end
@@ -51,12 +51,13 @@ function [] = Lab10b()
     % While it's moving along a wall, it tries to stay at 40 cm for the right wall
     % If it hits a wall, it does intoWall()
     % If I hit 'q', it stops.
+    keepDistance = 40
     function [] = main() 
-    	while (GetUltrasonic(ultra)<40) && ~GetSwitch(bumper) && (key ~= 'q')
+    	while (GetUltrasonic(ultra)<keepDistance) && ~GetSwitch(bumper) && (key ~= 'q')
     		forwardLeft();
     	end
 
-    	while (GetUltrasonic(ultra)>=40) && ~GetSwitch(bumper) && (key ~= 'q')
+    	while (GetUltrasonic(ultra)>=keepDistance) && ~GetSwitch(bumper) && (key ~= 'q')
     		forwardRight();
     	end
 
